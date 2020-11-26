@@ -4,13 +4,13 @@
       .left-header__group
         個人
       .left-header__membername
-        Menber : tomomi
+        Member : tomomi
     
     .right-header
       = link_to "Edit","#", class: "btn"
   .main-chat__message
     .message-group
-      = @messages.each do |message|
+      - @messages.each do |message|
         .message-group__info
           .name
             tomomi
@@ -20,12 +20,13 @@
           = message.body
 
   .main-chat__form
-    .message--form
-      .form
-        = form_for(@message)do |f|
-          = f.text_field :body, class: "form__message", id: "new_message", placeholder: "type a message"
-          .form__mask
-            = f.label :image, class: "form__mask__image" do
-              =icon('far', 'image')
-              =f.file_field :image, class: "hidden"
-          = f.submit "Send", class: "form__submit"
+    .main-chat__form__message
+      %form.main-chat__form__message__text
+        %input{name: "text", placeholder: "type a message", type: "text-field"}
+      .main-chat__form__message__image
+        %label{class: "input-box__image"}
+          = icon('far', 'image', class: "size")
+          %input{type: "file", class: "hidden"}
+    .main-chat__form__submit
+      %input{class: "submit-btn", type: "submit", value: "Send"}
+      
