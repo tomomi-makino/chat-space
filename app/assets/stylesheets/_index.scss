@@ -1,3 +1,9 @@
+$white-color: #ffffff;
+$aqua-color: #38aef0;
+$deepgrey-color: #333333;
+$light-grey-color: #999999;
+
+
 a {
   text-decoration: none;
 }
@@ -45,11 +51,11 @@ input, button, textarea, select {
       &__name{
         height: 20px;
         width: 60px;
-        color: #ffffff;
+        color: $white-color;
         font-weight: bold;
       }
       a {
-        color: #ffffff;
+        color: $white-color;
       }
       &__icons{
         height: 20px;
@@ -81,7 +87,7 @@ input, button, textarea, select {
     &__name {
       height: 15px;
       width: 260px;
-      color: #ffffff;
+      color: $white-color;
       font-size: 15px;
       font-weight: bold;
       line-height: 15px;
@@ -91,7 +97,7 @@ input, button, textarea, select {
     &__status {
       height: 11px;
       width: 260px;
-      color: #ffffff;
+      color: $white-color;
       font-size: 11px;
       line-height: 11px;
     }
@@ -101,12 +107,12 @@ input, button, textarea, select {
 .main-chat{
   height: 100vh;
   width: calc(100vw - 300px);
-  background-color:#ffffff;
+  background-color: $white-color;
   float: left;
   &__header{
     height: 100px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: $white-color;
     border-bottom: solid 1px #eeeeee;
     display: flex;
     justify-content: space-between;
@@ -117,12 +123,12 @@ input, button, textarea, select {
 
       &__group {
         font-size: 20px;
-        color: #333333;
+        color: $deepgrey-color;
         margin-top: 35px;
       }
       &__membername {
         font-size: 12px;
-        color: #999999;
+        color: $light-grey-color;
         margin-top: 15px;
         display: flex;
       }
@@ -132,14 +138,14 @@ input, button, textarea, select {
       float: right;
       height: 40px;
       width: 72px;
-      border: 1px solid #38aef0;
+      border: 1px solid $aqua-color;
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
       
     }
     a {
-      color: #38aef0;
+      color: $aqua-color;
     }
   }
   
@@ -157,14 +163,14 @@ input, button, textarea, select {
       display: flex;
     }
     .name {
-      color: #333333;
+      color: $deepgrey-color;
       font-size: 16px;
       font-weight: bold;
       line-height: 20px;
       margin-right: 10px;
     }
     .time {
-      color: #999999;
+      color: $light-grey-color;
       font-size: 12px;
     }
     &__body {
@@ -178,54 +184,57 @@ input, button, textarea, select {
 
   &__form{
     height: 90px;
-    width: 100%;
+    width: calc(100vw-300px);
     bottom: 0;
     background-color: #d2d2d2;
     display: flex;
+    justify-content: center;
     align-items: center;
-  }
-    
-  .message--form {
-    width: 100%;
-    line-height: 50px;
-    margin: 0 50px;
+    padding: 0 40px;
 
-    .form {    
-      background-color: #ffffff;
-      width: calc(100%-150px);
-      position: relative;
+    &__message {
+      background-color: $white-color;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      padding: 0 10px;
 
-      
-      &__message {
-        background-color: pink;
+      &__text {
         line-height: 50px;
-        width: calc(100%-50px);
-        padding: 0 10px;
-        position: absolute;
+        width: 100%;
         left: 0;
-      }
 
-      &__mask {
-        background-color: yellow;
-        position: absolute;
-        right: 0;
-        &__image {
+        input {
+          float: left;
           line-height: 50px;
-          right: 10px;
+          width: 100%;
         }
       }
-
+      
+      &__image {
+        line-height: 50px;
+      }
+      .size {
+        font-size: 1.5em;
+      }
       .hidden {
         display: none;
       }
+    }
+  
+    &__submit {
+      background-color: $aqua-color;
+      height: 50px;
+      line-height: 50px;
+      width: 100px;
+      margin-left: 15px;
+      text-align: center;
       
-      &__submit {
-        color: #fff;
-        background-color: #38aef0;
-        height: 50px;
-        width: 100px;  
-        margin-left: 15px;
+      .submit-btn {
+        color: $white-color;
       }
     }
-  }  
+  }
 }
