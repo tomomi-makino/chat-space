@@ -1,0 +1,231 @@
+a {
+  text-decoration: none;
+}
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.wrapper{
+  height: 100vh;
+  width: 100vw;
+}
+.side-bar{
+  height: 100vh;
+  width: 300px;
+  background-color: #253141;
+  float: left;
+
+  &__user{
+    height: 100px;
+    width: 300px;
+    background-color: #253141;
+    top: 0;
+    left: 0;
+    line-height: 100px;
+    display: flex;
+
+    &--info{
+      height: 20px;
+      width: 260px;
+      line-height: 20px;
+      margin: auto 20px;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      &__name{
+        height: 20px;
+        width: 60px;
+        color: #ffffff;
+        font-weight: bold;
+      }
+      a {
+        color: #ffffff;
+      }
+      &__icons{
+        height: 20px;
+        width: 60px;
+        text-align: right;
+        text-decoration: none;
+        
+        &__btn{
+          &--edit{
+            padding-right: 5px;
+          }
+
+        }
+      }
+    }
+  }
+
+  &__groups{
+    height: calc(100vh - 100px);
+    width: 300px;
+    background-color: #2f3e51;
+    left: 0;
+  }
+  .group{
+    height: 91px;
+    width: 300px;
+    padding: 20px 20px 40px 20px;
+
+    &__name {
+      height: 15px;
+      width: 260px;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 15px;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+    &__status {
+      height: 11px;
+      width: 260px;
+      color: #ffffff;
+      font-size: 11px;
+      line-height: 11px;
+    }
+  }
+}
+
+.main-chat{
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color:#ffffff;
+  float: left;
+  &__header{
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: solid 1px #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+
+    .left-header {
+      float: left;
+
+      &__group {
+        font-size: 20px;
+        color: #333333;
+        margin-top: 35px;
+      }
+      &__membername {
+        font-size: 12px;
+        color: #999999;
+        margin-top: 15px;
+        display: flex;
+      }
+    }
+  
+    .right-header {
+      float: right;
+      height: 40px;
+      width: 72px;
+      border: 1px solid #38aef0;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      
+    }
+    a {
+      color: #38aef0;
+    }
+  }
+  
+
+  &__message{
+    height: calc(100vh - 100px - 90px);
+    width: 100%;
+    background-color: #fafafa;
+    padding-left: 40px;
+    padding-top: 35px;
+  }
+  .message-group {
+    padding: 0 0 46px;
+    &__info {
+      display: flex;
+    }
+    .name {
+      color: #333333;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-right: 10px;
+    }
+    .time {
+      color: #999999;
+      font-size: 12px;
+    }
+    &__body {
+      color: #434A54;
+      font-size: 14px;
+      line-height: 15px;
+      padding-top: 12px;
+      margin-bottom: 46px;
+    }
+  }
+
+  &__form{
+    height: 90px;
+    width: 100%;
+    bottom: 0;
+    background-color: #d2d2d2;
+    display: flex;
+    align-items: center;
+  }
+    
+  .message--form {
+    width: 100%;
+    line-height: 50px;
+    margin: 0 50px;
+
+    .form {    
+      background-color: #ffffff;
+      width: calc(100%-150px);
+      position: relative;
+
+      
+      &__message {
+        background-color: pink;
+        line-height: 50px;
+        width: calc(100%-50px);
+        padding: 0 10px;
+        position: absolute;
+        left: 0;
+      }
+
+      &__mask {
+        background-color: yellow;
+        position: absolute;
+        right: 0;
+        &__image {
+          line-height: 50px;
+          right: 10px;
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+      
+      &__submit {
+        color: #fff;
+        background-color: #38aef0;
+        height: 50px;
+        width: 100px;  
+        margin-left: 15px;
+      }
+    }
+  }  
+}
