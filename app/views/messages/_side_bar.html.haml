@@ -2,11 +2,11 @@
   .side-bar__user
     .side-bar__user--info
       .side-bar__user--info__name
-        tomomi
+        = current_user.name
       .side-bar__user--info__icons
         = link_to "#", class: "contents__btn contents__btn--edit" do 
           =icon('far', 'edit')
-        = link_to "#", class: "contents__btn contents__btn--cog" do
+        = link_to edit_user_path(current_user), class: "contents__btn contents__btn--cog" do
           =icon('fas', 'cog')
 
   .side-bar__groups
