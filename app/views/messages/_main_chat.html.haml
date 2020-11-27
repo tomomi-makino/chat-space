@@ -10,14 +10,13 @@
       = link_to "Edit","#", class: "btn"
   .main-chat__message
     .message-group
-      - @messages.each do |message|
         .message-group__info
           .name
             tomomi
           .time
-            = message.created_at
+            2020
         .message-group__body
-          = message.body
+          こんにちは
 
   .main-chat__form
     .main-chat__form__message
