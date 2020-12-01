@@ -2,30 +2,28 @@
   .main-chat__header
     .left-header
       .left-header__group
-        個人
+        = @group.name
       .left-header__membername
-        Member : tomomi
+        Member : 
+        %li.menber
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     
     .right-header
-      = link_to "Edit","#", class: "btn"
+      = link_to edit_group_path(@group.id), class: "btn" do
+        Edit
   .main-chat__message
-    .message-group
-        .message-group__info
-          .name
-            tomomi
-          .time
-            2020
-        .message-group__body
-          こんにちは
+    = render @messages
 
   .main-chat__form
-    .main-chat__form__message
-      %form.main-chat__form__message__text
-        %input{name: "text", placeholder: "type a message", type: "text-field"}
-      .main-chat__form__message__image
-        %label{class: "input-box__image"}
-          = icon('far', 'image', class: "size")
-          %input{type: "file", class: "hidden"}
-    .main-chat__form__submit
-      %input{class: "submit-btn", type: "submit", value: "Send"}
+    = form_for [@group, @message] do |f|
+      .main-chat__form__body
+        = f.text_field :body, class: "main-chat__form__body--text", id: "new_message", placeholder: "type a message"
+        .main-chat__form__body--hidden
+          = f.label :image, class: "main-chat__form__body--image" do
+            = icon('far', 'image', class: "size")
+          = f.file_field :image, class: "hidden"
+      .main-chat__form__submit
+        = f.submit "Send", class: "submit-btn"
+        
       
