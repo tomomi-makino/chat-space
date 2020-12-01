@@ -129,6 +129,9 @@ input, button, textarea, select {
         margin-top: 15px;
         display: flex;
       }
+      li {
+        list-style: none;
+      }
     }
   
     .right-header {
@@ -182,56 +185,53 @@ input, button, textarea, select {
   &__form{
     height: 90px;
     width: calc(100vw-300px);
-    bottom: 0;
     background-color: #d2d2d2;
+    padding: 0 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 40px;
 
-    &__message {
+    &__body {
       background-color: $white-color;
       height: 50px;
-      width: 100%;
+      float: left;
       display: flex;
-      justify-content: space-between;
-      text-align: center;
       padding: 0 10px;
+      left: 0;
+      line-height: 50px;
 
-      &__text {
-        line-height: 50px;
-        width: 100%;
-        left: 0;
+      &__body--text {
 
-        input {
-          float: left;
-          line-height: 50px;
-          width: 100%;
-        }
       }
-      
-      &__image {
-        line-height: 50px;
-      }
-      .size {
-        font-size: 1.5em;
+      &__body--hidden {
+        
       }
       .hidden {
         display: none;
       }
-    }
-  
-    &__submit {
-      background-color: $aqua-color;
-      height: 50px;
-      line-height: 50px;
-      width: 100px;
-      margin-left: 15px;
-      text-align: center;
-      
-      .submit-btn {
-        color: $white-color;
+      .size {
+        font-size: 2em;
       }
     }
+
+    &__submit {
+      background-color: $aqua-color;
+      width: 100px;
+      height: 50px;
+      float: left;
+      position: relative;
+      margin-left: 15px;
+    }
+    .submit-btn {
+      color: $white-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+   
   }
+  
 }
