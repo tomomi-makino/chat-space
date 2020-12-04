@@ -183,12 +183,17 @@ input, button, textarea, select {
 
   &__form{
     height: 90px;
-    width: calc(100vw-300px);
+    width: 100%;
     background-color: #d2d2d2;
     padding: 0 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    &__new {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
 
     &__new {
       width: 100%;
@@ -205,11 +210,16 @@ input, button, textarea, select {
       padding: 0 10px;
       left: 0;
       line-height: 50px;
+      justify-content: space-between;
+
 
       &__body--text {
         width: 100%;
 
+      &--text {
+        width: 100%;
       }
+      
       &__body--hidden {
         
       }
