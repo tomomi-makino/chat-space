@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module ChatSpace
   class Application < Rails::Application
+    config.time_zone = 'Tokyo'
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     config.generators do |g|
       g.stylesheets false
       g.javascripts false
@@ -15,6 +17,5 @@ module ChatSpace
       g.test_framework false
     end
     config.i18n.default_locale = :ja
-    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
   end
 end
