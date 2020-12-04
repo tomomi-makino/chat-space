@@ -16,7 +16,7 @@
     = render @messages
 
   .main-chat__form
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {class: "main-chat__form__new"} do |f|
       .main-chat__form__body
         = f.text_field :body, class: "main-chat__form__body--text", id: "new_message", placeholder: "type a message"
         .main-chat__form__body--hidden
