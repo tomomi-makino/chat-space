@@ -220,9 +220,6 @@ input, button, textarea, select {
         width: 100%;
       }
       
-      &__body--hidden {
-        
-      }
       .hidden {
         display: none;
       }
@@ -248,5 +245,6 @@ input, button, textarea, select {
       left: 0;
       margin: auto;
     }
-  }  
+    }  
+  }
 }
