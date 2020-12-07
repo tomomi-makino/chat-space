@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message) {
     if (message.image) {
-      var html = `<div class="message-group">
+      var html = `<div class="message-group" dqata-message-id=${message.id}>
                     <div class="message-group__info">
                       <div class="name">
                         ${message.user_name}
@@ -19,7 +19,7 @@ $(function(){
                   </div>`
       return html;
     } else {
-      var html = `<div class="message-group">
+      var html = `<div class="message-group" data-message-id=${message.id}>
                     <div class="message-group__info">
                       <div class="name">
                         ${message.user_name}
@@ -60,5 +60,27 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   });
- });
- 
+  var reloadMessages = function() {
+    var last_message_id = $('.message-group:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        var insertHTML = '';
+        $each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.message-group').append(insertHTML);
+        $('.message-group').animate({ scrollTop: $('.message-group')[0].scrollHeight});
+      }     
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+  setInterval(reloadMessages, 7000);
+});
