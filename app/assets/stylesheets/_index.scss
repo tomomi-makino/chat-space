@@ -102,10 +102,12 @@ input, button, textarea, select {
 }
 
 .main-chat{
-  height: 100vh;
+  // height: 100vh;
   width: calc(100vw - 300px);
   background-color: $white-color;
   float: left;
+
+
   &__header{
     height: 100px;
     width: 100%;
@@ -189,11 +191,7 @@ input, button, textarea, select {
     display: flex;
     justify-content: center;
     align-items: center;
-    &__new {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
+    bottom: 0;
 
     &__new {
       width: 100%;
@@ -208,43 +206,47 @@ input, button, textarea, select {
       display: flex;
       justify-content: space-between;
       padding: 0 10px;
-      left: 0;
       line-height: 50px;
-      justify-content: space-between;
-
 
       &__body--text {
         width: 100%;
+
+      &__body--hidden {
+        right: 0;
+      }
 
       &--text {
         width: 100%;
       }
       
-      .hidden {
-        display: none;
-      }
-      .size {
-        font-size: 2em;
-      }
+     
+      
+    }
+    .hidden {
+      display: none;
     }
 
-    &__submit {
-      background-color: $aqua-color;
-      width: 100px;
-      height: 50px;
-      float: left;
-      position: relative;
-      margin-left: 15px;
+    .size {
+      font-size: 2em;
     }
-    .submit-btn {
-      color: $white-color;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
+  }
+
+  &__submit {
+    background-color: $aqua-color;
+    width: 100px;
+    height: 50px;
+    float: left;
+    position: relative;
+    margin-left: 15px;
+  }
+  .submit-btn {
+    color: $white-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
     }
-    }  
   }
 }
