@@ -1,4 +1,5 @@
-.message-group
+-# メッセージ全体にidを付与。   ※#{message.id}はjbuilderファイルで定義している
+.message-group{"data-message-id": "#{message.id}"}
   .message-group__info
     .name
       = message.user.name
