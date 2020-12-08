@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message) {
     if (message.image) {
-      var html = `<div class="message-group" dqata-message-id=${message.id}>
+      var html = `<div class="message-group" data-message-id=${message.id}>
                     <div class="message-group__info">
                       <div class="name">
                         ${message.user_name}
@@ -71,7 +71,7 @@ $(function(){
     .done(function(messages) {
       if (messages.length !== 0) {
         var insertHTML = '';
-        $each(messages, function(i, message) {
+        $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
         $('.message-group').append(insertHTML);
@@ -82,5 +82,7 @@ $(function(){
       alert('error');
     });
   };
-  setInterval(reloadMessages, 7000);
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  } 
 });
