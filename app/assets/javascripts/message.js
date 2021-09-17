@@ -74,8 +74,8 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.main-chat__message').append(insertHTML);
-        $('.main-chat__message').animate({ scrollTop: $('.main-chat__message')[0].scrollHeight});
+        $('.message-group').append(insertHTML);
+        $('.message-group').animate({ scrollTop: $('.message-group')[0].scrollHeight});
       }     
     })
     .fail(function() {
