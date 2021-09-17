@@ -38,7 +38,6 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'capistrano-rails-console', require: false # 手元の環境からデプロイ先のconsoleを使う 
 end
 
 group :development do
